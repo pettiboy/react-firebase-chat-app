@@ -1,9 +1,11 @@
-import { CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { CircularProgress } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Center from "./components/Utils/Center/Center";
 import { auth } from "./config/firebase";
 import routes from "./config/routes";
+import AuthContainer from "./components/AuthContainer/AuthContainer";
+import AuthChecker from "./components/Utils/AuthChecker/AuthChecker";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -34,7 +36,15 @@ function App() {
             <Route
               key={index}
               path={route.path}
-              element={<route.component />}
+              element={
+                route.protected ? (
+                  <AuthChecker>
+                    <route.component />
+                  </AuthChecker>
+                ) : (
+                  <route.component />
+                )
+              }
             />
           ))}
         </Routes>

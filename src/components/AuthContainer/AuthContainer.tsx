@@ -28,14 +28,6 @@ const AuthContainer = (props: Props) => {
       });
   };
 
-  // const logout = () => {
-  //   signOut(auth)
-  //     .then(() => {})
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
   return (
     <div>
       <Button

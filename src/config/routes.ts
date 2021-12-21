@@ -20,13 +20,13 @@ const routes: RouteType[] = [
     path: "/login",
     component: Login,
     name: "Login Screen",
-    protected: true,
+    protected: false,
   },
   {
     path: "/chats",
     component: Chats,
     name: "Chats Screen",
-    protected: false,
+    protected: true,
   },
 ];
 
