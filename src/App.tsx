@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { auth } from "./config/firebase";
 import routes from "./config/routes";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        console.info("User detected.");
+      } else {
+        console.info("No user detected");
+      }
+      setLoading(false);
+    });
+  }, []);
+
+  if (loading) return <h2>Loading...</h2>;
+
   return (
     <div>
       <BrowserRouter>
