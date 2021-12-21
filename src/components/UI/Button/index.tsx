@@ -6,7 +6,11 @@ interface Props {
 }
 
 const Button = ({ onClick, title }: Props) => {
-  return <button onClick={onClick}>{title}</button>;
+  return (
+    <>
+      <button onClick={onClick}>{title}</button>
+    </>
+  );
 };
 
 export default Button;
