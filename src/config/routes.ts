@@ -1,3 +1,4 @@
+import Chat from "../screens/Chat";
 import Chats from "../screens/Chats";
 import Home from "../screens/Home";
 import Login from "../screens/Login";
@@ -26,6 +27,12 @@ const routes: RouteType[] = [
     path: "/chats",
     component: Chats,
     name: "Chats Screen",
+    protected: true,
+  },
+  {
+    path: "/chat/:chatId",
+    component: Chat,
+    name: "Chat Screen",
     protected: true,
   },
 ];

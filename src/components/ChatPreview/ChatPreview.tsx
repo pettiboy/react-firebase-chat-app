@@ -1,11 +1,13 @@
-import { Avatar, Box, Typography } from "@mui/material";
+import { Avatar, Box, ButtonBase, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   imageUrl: string;
   latestMessage: string;
   latestMessageTime: string;
   chatName: string;
+  chatId: string;
 }
 
 const ChatPreview = ({
@@ -13,31 +15,32 @@ const ChatPreview = ({
   latestMessage,
   latestMessageTime,
   chatName,
+  chatId,
 }: Props) => {
+  const navigate = useNavigate();
+
+  const onClick = () => {
+    navigate("/chat/" + chatId);
+  };
+
   return (
-    <Box
+    <ButtonBase
+      onClick={onClick}
       sx={{
-        // borderTop: "1px solid grey",
-        borderBottom: "0.5px solid lightgrey",
-        maxWidth: 550,
-        height: 80,
-        // bgcolor: "grey.500",
-        "&:hover": {
-          backgroundColor: "primary.main",
-          opacity: [0.9, 0.8, 0.7],
-        },
         display: "flex",
-        px: 2,
         alignItems: "center",
+        width: "100%",
+        height: 80,
+        px: 2,
+        borderBottom: "0.5px solid lightgrey",
       }}
     >
-      {/* image */}
       <Box>
         <Avatar alt={chatName} src={imageUrl} sx={{ width: 56, height: 56 }} />
       </Box>
       <Box sx={{ ml: 2 }}>
         <Typography variant="h5">{chatName}</Typography>
-        <Typography sx={{ pl: 0.15 }} variant="caption">
+        <Typography style={{ textAlign: "start", fontSize: 12 }}>
           {latestMessage}
         </Typography>
       </Box>
@@ -46,7 +49,8 @@ const ChatPreview = ({
         <br />
         {/* <Typography variant="caption">3</Typography> */}
       </Box>
-    </Box>
+      {/* </Box> */}
+    </ButtonBase>
   );
 };
 

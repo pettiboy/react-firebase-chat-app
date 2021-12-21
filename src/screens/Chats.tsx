@@ -11,12 +11,14 @@ interface Props {}
 
 const allChats = [
   {
+    chatId: "0x1234",
     imageUrl: "https://source.unsplash.com/random/200x200",
     chatName: "Everyone",
     latestMessage: "React > Flutter",
     latestMessageTime: "10:23",
   },
   {
+    chatId: "0x12345",
     imageUrl: "https://source.unsplash.com/random/200x200",
     chatName: "Another One",
     latestMessage: "React >>>> Flutter",
@@ -48,6 +50,7 @@ const Chats = (props: Props) => {
       {chats.map((chat, index) => (
         <ChatPreview
           key={index}
+          chatId={chat.chatId}
           imageUrl={chat.imageUrl}
           chatName={chat.chatName}
           latestMessage={chat.latestMessage}
