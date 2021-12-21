@@ -8,6 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import { Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import ElevationScroll from "../Utils/ElevationScroll/ElevationScroll";
 
 interface Props {
   name: string;
@@ -22,8 +23,8 @@ export default function ButtonAppBar({ name, imageUrl }: Props) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <ElevationScroll>
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             onClick={toChatsScreen}
@@ -43,6 +44,6 @@ export default function ButtonAppBar({ name, imageUrl }: Props) {
           </Box>
         </Toolbar>
       </AppBar>
-    </Box>
+    </ElevationScroll>
   );
 }
