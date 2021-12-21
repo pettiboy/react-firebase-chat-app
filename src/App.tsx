@@ -1,5 +1,7 @@
+import { CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Center from "./components/Utils/Center/Center";
 import { auth } from "./config/firebase";
 import routes from "./config/routes";
 
@@ -17,7 +19,12 @@ function App() {
     });
   }, []);
 
-  if (loading) return <h2>Loading...</h2>;
+  if (loading)
+    return (
+      <Center>
+        <CircularProgress />
+      </Center>
+    );
 
   return (
     <div>

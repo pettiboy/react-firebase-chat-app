@@ -10,12 +10,16 @@ const Home = (props: Props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    redirect();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const redirect = () => {
     if (user) {
       navigate("/chats");
     } else {
       navigate("/login");
     }
-  }, []);
+  };
 
   return <div></div>;
 };
