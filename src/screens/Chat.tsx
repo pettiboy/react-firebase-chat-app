@@ -1,11 +1,20 @@
-import React from "react";
+import { colors } from "@mui/material";
+import React, {
+  createRef,
+  LegacyRef,
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useParams } from "react-router-dom";
 import ChatAppBar from "../components/AppBars/ChatAppBar";
 import ChatMessage from "../components/ChatMessage/ChatMessage";
+import MessageForm from "../components/MessageForm/MessageForm";
 
 interface Props {}
 
-const messages = [
+const HCMessages = [
   {
     text: "Hello, World!",
     uid: "123njklsa0f2913",
@@ -61,13 +70,39 @@ const messages = [
     uid: "12a3njklsa02913",
     name: "Baz",
   },
+  {
+    text: "Hello, World!",
+    uid: "12a3njklsa02913",
+    name: "Baz",
+  },
+  {
+    uid: "12a3njklsa02913",
+    text: "Hello, World!",
+    name: "Baz",
+  },
 ];
 
 const Chat = (props: Props) => {
+  const [messages, setMessages] = useState(HCMessages);
+  const scrollStartRef = createRef<HTMLSpanElement>();
   const params = useParams();
-  console.log(params);
+
+  const sendMessageCallback = (messageText: string) => {
+    const messageObj = {
+      uid: "123njklsa0f2913",
+      text: messageText,
+      name: "Bar",
+    };
+    setMessages((prev) => [...prev, messageObj]);
+  };
+
+  useEffect(() => {
+    scrollStartRef.current?.scrollIntoView();
+    return () => {};
+  }, [messages]);
+
   return (
-    <div>
+    <div style={{ backgroundColor: colors.grey[300] }}>
       <ChatAppBar name={params.chatId || ""} imageUrl="123" />
       {messages.map((message, index) => (
         <ChatMessage
@@ -77,6 +112,8 @@ const Chat = (props: Props) => {
           name={message.name}
         />
       ))}
+      <span ref={scrollStartRef}></span>
+      <MessageForm sendMessageCallback={sendMessageCallback} />
     </div>
   );
 };

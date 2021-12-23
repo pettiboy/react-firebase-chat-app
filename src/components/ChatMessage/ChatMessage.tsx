@@ -1,5 +1,6 @@
 import { Box, colors, Typography } from "@mui/material";
 import React from "react";
+import { auth } from "../../config/firebase";
 
 interface Props {
   uid: string;
@@ -8,6 +9,9 @@ interface Props {
 }
 
 const ChatMessage = ({ text, uid, name }: Props) => {
+  // auth.currentUser?.uid;
+  const isSent = "123njklsa0f2913" === uid;
+
   const spacing = {
     px: 2,
     py: 1,
@@ -23,10 +27,14 @@ const ChatMessage = ({ text, uid, name }: Props) => {
 
   return (
     <Box
-      sx={{
-        display: "flex",
-        // flexDirection: "row-reverse",
-      }}
+      display={"flex"}
+      sx={
+        isSent
+          ? {
+              flexDirection: "row-reverse",
+            }
+          : {}
+      }
     >
       <Box
         sx={{
