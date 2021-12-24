@@ -1,8 +1,8 @@
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 import React from "react";
 import { useSearchParams } from "react-router-dom";
-import AuthContainer from "../components/AuthContainer/AuthContainer";
-import Center from "../components/Utils/Center/Center";
+import AuthContainer from "../components/AuthContainer";
+import Center from "../components/Utils/Center";
 
 interface Props {}
 

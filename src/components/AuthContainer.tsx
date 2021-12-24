@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { auth, Providers } from "../../config/firebase";
+import { auth, Providers } from "../config/firebase";
 import { Button, Typography } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 

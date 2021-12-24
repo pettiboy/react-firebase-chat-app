@@ -1,6 +1,6 @@
 import { Box, colors, Typography } from "@mui/material";
 import React from "react";
-import { auth } from "../../config/firebase";
+import { auth } from "../config/firebase";
 
 interface Props {
   uid: string;

@@ -8,7 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import { Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import ElevationScroll from "../Utils/ElevationScroll/ElevationScroll";
+import ElevationScroll from "../Utils/ElevationScroll";
 
 interface Props {
   name: string;

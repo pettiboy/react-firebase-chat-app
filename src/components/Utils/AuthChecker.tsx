@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { auth } from "../../../config/firebase";
+import { auth } from "../../config/firebase";
 
 interface Props {
   children: React.ReactNode;

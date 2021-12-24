@@ -9,8 +9,8 @@ import React, {
 } from "react";
 import { useParams } from "react-router-dom";
 import ChatAppBar from "../components/AppBars/ChatAppBar";
-import ChatMessage from "../components/ChatMessage/ChatMessage";
-import MessageForm from "../components/MessageForm/MessageForm";
+import ChatMessage from "../components/ChatMessage";
+import MessageForm from "../components/MessageForm";
 
 interface Props {}
 

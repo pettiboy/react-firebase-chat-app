@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Center from "./components/Utils/Center/Center";
+import Center from "./components/Utils/Center";
 import { auth } from "./config/firebase";
 import routes from "./config/routes";
-import AuthContainer from "./components/AuthContainer/AuthContainer";
-import AuthChecker from "./components/Utils/AuthChecker/AuthChecker";
+import AuthContainer from "./components/AuthContainer";
+import AuthChecker from "./components/Utils/AuthChecker";
 
 function App() {
   const [loading, setLoading] = useState(true);

@@ -3,8 +3,8 @@ import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ChatsAppBar from "../components/AppBars/ChatsAppBar";
-import ChatPreview from "../components/ChatPreview/ChatPreview";
-import Logout from "../components/Utils/Logout/Logout";
+import ChatPreview from "../components/ChatPreview";
+import Logout from "../components/Utils/Logout";
 import { auth } from "../config/firebase";
 
 interface Props {}

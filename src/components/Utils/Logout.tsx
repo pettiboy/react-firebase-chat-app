@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../../config/firebase";
+import { auth } from "../../config/firebase";
 
 interface Props {}
 
