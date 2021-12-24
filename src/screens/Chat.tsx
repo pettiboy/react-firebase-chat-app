@@ -102,7 +102,7 @@ const Chat = (props: Props) => {
   }, [messages]);
 
   return (
-    <div style={{ backgroundColor: colors.grey[300] }}>
+    <div style={{ backgroundColor: colors.grey[900] }}>
       <ChatAppBar name={params.chatId || ""} imageUrl="123" />
       {messages.map((message, index) => (
         <ChatMessage

@@ -23,22 +23,25 @@ const MessageForm = ({ sendMessageCallback }: Props) => {
   };
 
   return (
-    <Box sx={{ mt: 9 }}>
-      <Box
-        sx={{
-          bottom: 0,
-          p: 1,
-          position: "fixed",
-          width: "100vw",
-          display: "flex",
-          bgcolor: colors.grey[300],
-        }}
-      >
-        <Box>
+    // <Box sx={{ mt: 9 }}>
+    <Box
+      sx={{
+        bottom: 0,
+        right: 0,
+        height: 100,
+        width: 100,
+        // p: 1,
+        bgcolor: colors.green[300],
+        // display: "flex",
+        position: "fixed",
+        // transform: "translateX(-50%)",
+      }}
+    >
+      {/* <Box>
           <TextField
             value={messageText}
             onChange={(e) => setMessageText(e.target.value)}
-            style={{ width: "80vw" }}
+            style={{ width: "80%" }}
             placeholder="Type here..."
             onKeyDown={handleKeyDown}
           />
@@ -53,9 +56,9 @@ const MessageForm = ({ sendMessageCallback }: Props) => {
           >
             <SendIcon fontSize={"large"} />
           </IconButton>
-        </Box>
-      </Box>
+        </Box> */}
     </Box>
+    // </Box>
   );
 };
 

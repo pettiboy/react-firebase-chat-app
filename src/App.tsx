@@ -6,6 +6,7 @@ import { auth } from "./config/firebase";
 import routes from "./config/routes";
 import AuthContainer from "./components/AuthContainer";
 import AuthChecker from "./components/Utils/AuthChecker";
+import CenteredBox from "./components/Utils/CenteredBox";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -39,10 +40,14 @@ function App() {
               element={
                 route.protected ? (
                   <AuthChecker>
-                    <route.component />
+                    <CenteredBox>
+                      <route.component />
+                    </CenteredBox>
                   </AuthChecker>
                 ) : (
-                  <route.component />
+                  <CenteredBox>
+                    <route.component />
+                  </CenteredBox>
                 )
               }
             />
