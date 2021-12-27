@@ -23,42 +23,36 @@ const MessageForm = ({ sendMessageCallback }: Props) => {
   };
 
   return (
-    // <Box sx={{ mt: 9 }}>
     <Box
       sx={{
+        position: "sticky",
+        display: "flex",
         bottom: 0,
         right: 0,
-        height: 100,
-        width: 100,
-        // p: 1,
         bgcolor: colors.green[300],
-        // display: "flex",
-        position: "fixed",
-        // transform: "translateX(-50%)",
+        p: 1,
       }}
     >
-      {/* <Box>
-          <TextField
-            value={messageText}
-            onChange={(e) => setMessageText(e.target.value)}
-            style={{ width: "80%" }}
-            placeholder="Type here..."
-            onKeyDown={handleKeyDown}
-          />
-        </Box>
-        <Box>
-          <IconButton
-            onClick={sendMessage}
-            edge="start"
-            color="primary"
-            aria-label="back"
-            sx={{ ml: 1 }}
-          >
-            <SendIcon fontSize={"large"} />
-          </IconButton>
-        </Box> */}
+      <Box sx={{ flex: 8 }}>
+        <TextField
+          value={messageText}
+          style={{ width: "100%" }}
+          onChange={(e) => setMessageText(e.target.value)}
+          placeholder="Type here..."
+          onKeyDown={handleKeyDown}
+        />
+      </Box>
+      <Box sx={{ flex: 1 }}>
+        <IconButton
+          onClick={sendMessage}
+          edge="start"
+          color="primary"
+          sx={{ ml: 1 }}
+        >
+          <SendIcon fontSize={"large"} />
+        </IconButton>
+      </Box>
     </Box>
-    // </Box>
   );
 };
 

@@ -7,11 +7,7 @@ interface Props {
 }
 
 const CenteredBox = ({ children }: Props) => {
-  return (
-    <div className="overlay">
-      <div className="overlay overlay-in">{children}</div>
-    </div>
-  );
+  return <div className="overlay">{children}</div>;
 };
 
 export default CenteredBox;
