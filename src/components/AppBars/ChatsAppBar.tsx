@@ -9,6 +9,7 @@ import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import ElevationScroll from "../Utils/ElevationScroll";
+import { COLORS } from "../../theme/colors";
 
 interface Props {
   updateQueryCallback(newQuery: string): void;
@@ -50,7 +51,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const ChatsAppBar = ({ updateQueryCallback }: Props) => {
   return (
     <ElevationScroll>
-      <AppBar position="sticky">
+      <AppBar
+        position="sticky"
+        style={{
+          background: COLORS.appBar.background,
+          color: COLORS.appBar.text,
+        }}
+      >
         <Toolbar>
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             React Chat App

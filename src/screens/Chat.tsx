@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 import ChatAppBar from "../components/AppBars/ChatAppBar";
 import ChatMessage from "../components/ChatMessage";
 import MessageForm from "../components/MessageForm";
+import { COLORS } from "../theme/colors";
 
 interface Props {}
 
@@ -102,7 +103,7 @@ const Chat = (props: Props) => {
   }, [messages]);
 
   return (
-    <div style={{ backgroundColor: colors.grey[900] }}>
+    <div style={{ backgroundColor: COLORS.chat.background }}>
       <ChatAppBar name={params.chatId || ""} imageUrl="123" />
       {messages.map((message, index) => (
         <ChatMessage

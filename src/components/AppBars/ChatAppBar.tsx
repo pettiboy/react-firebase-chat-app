@@ -9,13 +9,14 @@ import ArrowBack from "@mui/icons-material/ArrowBack";
 import { Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ElevationScroll from "../Utils/ElevationScroll";
+import { COLORS } from "../../theme/colors";
 
 interface Props {
   name: string;
   imageUrl: string;
 }
 
-export default function ButtonAppBar({ name, imageUrl }: Props) {
+export default function ChatAppBar({ name, imageUrl }: Props) {
   const navigate = useNavigate();
 
   const toChatsScreen = () => {
@@ -24,7 +25,13 @@ export default function ButtonAppBar({ name, imageUrl }: Props) {
 
   return (
     <ElevationScroll>
-      <AppBar position="sticky">
+      <AppBar
+        position="sticky"
+        style={{
+          background: COLORS.appBar.background,
+          color: COLORS.appBar.text,
+        }}
+      >
         <Toolbar>
           <IconButton
             onClick={toChatsScreen}

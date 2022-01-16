@@ -1,6 +1,7 @@
 import { Box, colors, Typography } from "@mui/material";
 import React from "react";
 import { auth } from "../config/firebase";
+import { COLORS } from "../theme/colors";
 
 interface Props {
   uid: string;
@@ -25,6 +26,10 @@ const ChatMessage = ({ text, uid, name }: Props) => {
     borderBottomRightRadius: 6,
   };
 
+  const backgroundColor = isSent
+    ? COLORS.chat.messageSentBg
+    : COLORS.chat.messageReceivedBg;
+
   return (
     <Box
       display={"flex"}
@@ -40,14 +45,16 @@ const ChatMessage = ({ text, uid, name }: Props) => {
         sx={{
           ...spacing,
           ...rightBorderRadius,
-          bgcolor: colors.purple[100],
+          bgcolor: backgroundColor,
           display: "inline-block",
         }}
       >
-        <Typography style={{ fontSize: 14, color: colors.grey[800] }}>
+        <Typography style={{ fontSize: 14, color: COLORS.chat.messageByText }}>
           {name}
         </Typography>
-        <Typography>{text}</Typography>
+        <Typography style={{ color: COLORS.chat.messageContent }}>
+          {text}
+        </Typography>
       </Box>
     </Box>
   );

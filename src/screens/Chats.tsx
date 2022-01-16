@@ -6,6 +6,7 @@ import ChatsAppBar from "../components/AppBars/ChatsAppBar";
 import ChatPreview from "../components/ChatPreview";
 import Logout from "../components/Utils/Logout";
 import { auth } from "../config/firebase";
+import { COLORS } from "../theme/colors";
 
 interface Props {}
 
@@ -131,7 +132,7 @@ const allChats = [
   },
 ];
 
-const Chats = (props: Props) => {
+const Chats = ({}: Props) => {
   const [chats, setChats] = useState(allChats);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -150,7 +151,7 @@ const Chats = (props: Props) => {
   }, [searchQuery]);
 
   return (
-    <div>
+    <div style={{ background: COLORS.chats.combinedBackground }}>
       <ChatsAppBar updateQueryCallback={updateQuery} />
       {chats.map((chat, index) => (
         <ChatPreview

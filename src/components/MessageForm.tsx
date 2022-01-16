@@ -1,6 +1,7 @@
 import { Box, colors, IconButton, Input, TextField } from "@mui/material";
 import React, { useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
+import { COLORS } from "../theme/colors";
 
 interface Props {
   sendMessageCallback(messageText: string): void;
@@ -29,7 +30,7 @@ const MessageForm = ({ sendMessageCallback }: Props) => {
         display: "flex",
         bottom: 0,
         right: 0,
-        bgcolor: colors.green[300],
+        bgcolor: COLORS.chat.messageFormBg,
         p: 1,
       }}
     >
